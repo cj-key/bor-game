@@ -7,15 +7,26 @@ Just drag and drop to try and match desctriptions of the 10 amendments to the co
 
 <details><summary>Answer Key:</summary>
 <p>
-"The freedom of speech, religion, and the press.", correctAnswer: 1
-"The right to bear arms.", correctAnswer: 2 },
-"Protection against quartering of troops.", correctAnswer: 3
-"Protection against unreasonable searches and seizures.", correctAnswer: 4
-"Protection of rights to life, liberty, and property.", correctAnswer: 5
- "Rights of accused persons in criminal cases.", correctAnswer: 6
-"Rights in civil cases.", correctAnswer: 7
-"Excessive bail, cruel punishment.", correctAnswer: 8
-"Rights retained by the people.", correctAnswer: 9
-"Powers retained by the states and the people.", correctAnswer: 10
-</p>
+
+ 1. "The freedom of speech, religion, and the press."
+
+2. "The right to bear arms."
+
+3. "Protection against quartering of troops."
+
+4. "Protection against unreasonable searches and seizures."
+
+5. "Protection of rights to life, liberty, and property."
+
+6. "Rights of accused persons in criminal cases."
+
+7. "Rights in civil cases."
+
+8. "Excessive bail, cruel punishment."
+
+9. "Rights retained by the people."
+ 
+10. "Powers retained by the states and the people."
+
+ </p>
 </details>
