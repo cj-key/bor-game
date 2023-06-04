@@ -5,7 +5,7 @@ Just drag and drop to try and match desctriptions of the 10 amendments to the co
 
 Answer Key: 
 
-"The freedom of speech, religion, and the press.", correctAnswer: 1
+// "The freedom of speech, religion, and the press.", correctAnswer: 1
 "The right to bear arms.", correctAnswer: 2 },
 "Protection against quartering of troops.", correctAnswer: 3
 "Protection against unreasonable searches and seizures.", correctAnswer: 4
