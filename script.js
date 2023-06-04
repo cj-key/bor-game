@@ -40,20 +40,22 @@ document.addEventListener("DOMContentLoaded", function() {
       });
     }
   
-    // Function to create Description Tiles
-    function createDescriptionTiles() {
-      const tilesContainer = document.getElementById("tiles-container");
-      shuffleArray(descriptionTiles).forEach(tile => {
-        const description = tile.description;
-        const correctAnswer = tile.correctAnswer;
-        const tileElement = document.createElement("div");
-        tileElement.className = "tile";
-        tileElement.textContent = description;
-        tileElement.dataset.correctAnswer = correctAnswer;
-        tileElement.draggable = true;
-        tilesContainer.appendChild(tileElement);
-      });
-    }
+// Function to create Description Tiles
+function createDescriptionTiles() {
+  const tilesContainer = document.getElementById("tiles-container");
+  shuffleArray(descriptionTiles).forEach(tile => {
+    const description = tile.description;
+    const correctAnswer = tile.correctAnswer;
+    const tileElement = document.createElement("div");
+    tileElement.className = "tile";
+    tileElement.textContent = description;
+    tileElement.dataset.correctAnswer = correctAnswer;
+    tileElement.draggable = true;
+    tileElement.dataset.selected = "false"; // Add data-selected attribute
+    tilesContainer.appendChild(tileElement);
+  });
+}
+
   
     // Initialize the game
     function initializeGame() {
@@ -110,17 +112,24 @@ document.addEventListener("DOMContentLoaded", function() {
       event.preventDefault();
     });
   
-    // Event listener for dropping the tile onto a card
-    document.addEventListener("drop", function(event) {
-      event.preventDefault();
-      const targetCard = event.target;
-      if (targetCard.classList.contains("card") && !targetCard.classList.contains("flipped")) {
-        const tileContent = event.dataTransfer.getData("text/plain");
-        targetCard.textContent = tileContent;
-        targetCard.classList.add("flipped");
-        selectedAnswers.push(tileContent);
-      }
-    });
+// Event listener for dropping the tile onto a card
+document.addEventListener("drop", function(event) {
+  event.preventDefault();
+  const targetCard = event.target;
+  if (targetCard.classList.contains("card") && !targetCard.classList.contains("flipped")) {
+    const tileContent = event.dataTransfer.getData("text/plain");
+    targetCard.textContent = tileContent;
+    targetCard.classList.add("flipped");
+    selectedAnswers.push(tileContent);
+
+    const selectedTile = document.querySelector(`.tile[data-selected="false"][data-correct-answer="${targetCard.dataset.correctAnswer}"]`);
+    if (selectedTile) {
+      selectedTile.dataset.selected = "true"; // Mark the selected answer tile as "selected"
+      selectedTile.style.display = "none"; // Hide the selected answer tile
+    }
+  }
+});
+
   
     // Check Answer button functionality
     const checkAnswerButton = document.getElementById("check-answer");
